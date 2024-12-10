@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class Arbeitspaket {
     private int apNr;
@@ -12,6 +13,27 @@ public class Arbeitspaket {
     private int gp;
     private List<Arbeitspaket> vorgaengerListe;
     private List<Arbeitspaket> nachfolgerListe;
+
+
+    public Arbeitspaket() {
+        Scanner apNr = new Scanner(System.in); // Scanner für Eingabe erstellen
+        System.out.print("Bitte geben Sie die Arbeitspaket Nummer ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
+        this.apNr = apNr.nextInt(); // Wert der privaten Variable setzen
+
+
+        Scanner name = new Scanner(System.in); // Scanner für Eingabe erstellen
+        System.out.println("Bitte geben Sie den Namen des Arbeitspakets ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
+        this.name = name.nextLine(); // Wert der privaten Variable setzen
+
+        Scanner faz = new Scanner(System.in); // Scanner für Eingabe erstellen
+        System.out.println("Bitte geben sie den frühesten Anfangszeitpunkt des Arbeitspakets ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
+        this.faz = faz.nextInt(); // Wert der privaten Variable setzen
+
+        Scanner dauer = new Scanner(System.in); // Scanner für Eingabe erstellen
+        System.out.println("Bitte geben Sie die Dauer des Arbeitspakets ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
+        this.dauer = dauer.nextInt(); // Wert der privaten Variable setzen
+        dauer.close();
+    }
 
 
     public int getApNr() {
