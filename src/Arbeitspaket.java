@@ -146,11 +146,11 @@ public class Arbeitspaket {
     }
 
     public int calculateFP(int faz, int fez) {
-        return faz - fez;
+        return fp = faz - fez;
     }
 
     public int calculateGP(int saz, int faz) {
-        return saz - faz;
+        return gp = saz - faz;
     }
 }
 
