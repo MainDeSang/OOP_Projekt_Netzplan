@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class Arbeitspaket {
     private int apNr;
@@ -12,6 +13,54 @@ public class Arbeitspaket {
     private int gp;
     private List<Arbeitspaket> vorgaengerListe;
     private List<Arbeitspaket> nachfolgerListe;
+
+
+    public Arbeitspaket() {
+        // Try-Catch-Block im Konstruktor um eventuell aufkommende fehler bei der Initialisierung der Objekte oder fehler bei der Eingabe des Nutzers aufzufangen.
+        try {
+
+
+            Scanner apNr = new Scanner(System.in); // Scanner für Eingabe erstellen
+            System.out.print("Bitte geben Sie die Arbeitspaket Nummer ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
+            if (apNr.hasNextInt()) { //überprüfen ob Nutzereingabe richtigen Wert/Typ hat.
+                this.apNr = apNr.nextInt(); // Wert der privaten Variable setzen
+            } else {
+                System.out.println("Eingabe ist ungültig! Bitte geben Sie eine Dezimalzahl ein!");
+            }
+
+
+            Scanner name = new Scanner(System.in); // Scanner für Eingabe erstellen
+            System.out.println("Bitte geben Sie den Namen des Arbeitspakets ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
+            if (name.hasNextLine()) { // Wert der privaten Variable setzen
+                this.name = name.nextLine();
+            } else {
+                System.out.println("Eingabe ist ungültig! Bitte geben Sie einen Namen in lateinischen Buchstaben ohne Sonderzeichen ein.");
+            }
+
+            Scanner faz = new Scanner(System.in); // Scanner für Eingabe erstellen
+            System.out.println("Bitte geben sie den frühesten Anfangszeitpunkt des Arbeitspakets ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
+            if (faz.hasNextInt()) {
+                this.faz = faz.nextInt(); // Wert der privaten Variable setzen
+            } else {
+                System.out.println("Eingabe ist ungültig! Bitte geben Sie den frühesten Anfangszeitpunkt (faz) in ganzen Stunden an!");
+            }
+
+            Scanner dauer = new Scanner(System.in); // Scanner für Eingabe erstellen
+            System.out.println("Bitte geben Sie die Dauer des Arbeitspakets ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
+            if (dauer.hasNextInt()) {
+                this.dauer = dauer.nextInt(); // Wert der privaten Variable setzen
+            } else {
+                System.out.println("Eingabe ist ungültig. Bitte geben Sie die Dauer des Arbeitspakets in ganzen Stunden an!");
+            }
+
+            apNr.close(); // Schließen
+            name.close(); // der jeweils
+            faz.close(); // initialisierten
+            dauer.close(); // Scannern
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public int getApNr() {
