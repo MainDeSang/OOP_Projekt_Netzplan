@@ -145,10 +145,12 @@ public class Arbeitspaket {
         this.nachfolgerListe = nachfolgerListe;
     }
 
+    // Methode um den Freien Puffer anhand der Parameter zu berechnen.
     public int calculateFP(int faz, int fez) {
         return this.fp = faz - fez;
     }
 
+    // Methode um den gesamten Puffer anhand der Parameter zu berechnen.
     public int calculateGP(int saz, int faz) {
         return this.gp = saz - faz;
     }
