@@ -16,7 +16,7 @@ public class Arbeitspaket {
 
 
     public Arbeitspaket() {
-
+        // Try-Catch-Block im Konstruktor um eventuell aufkommende fehler bei der Initialisierung der Objekte oder fehler bei der Eingabe des Nutzers aufzufangen.
         try {
 
 
