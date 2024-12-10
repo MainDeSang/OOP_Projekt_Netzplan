@@ -17,42 +17,41 @@ public class Arbeitspaket {
     // Klassen eigener Konstruktor welcher die bereits bekannten Werte des Arbeitspaketes, die über Scanner dem Nutzer abgefragt werden, direkt in das zu instanziierende Objekt füllt.
     public Arbeitspaket() {
 
-        // Try-Catch-Block im Konstruktor um eventuell aufkommende fehler bei der Initialisierung der Objekte oder fehler bei der Eingabe des Nutzers aufzufangen.
+        // Try-Catch-Blöcke im Konstruktor um eventuell aufkommende fehler bei der Initialisierung der Objekte mit den zu übergebenden Variablen oder fehler bei der Eingabe des Nutzers aufzufangen.
 
-        try (Scanner apNr = new Scanner(System.in)) { // Try-Catch-Block mit Scanner für Eingabe erstellen
-            System.out.print("Bitte geben Sie die Arbeitspaket Nummer ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
-            this.apNr = apNr.nextInt();// Wert der privaten Variable setzen
-        } catch (Exception e) {
+        try (Scanner apNr = new Scanner(System.in)) { // Try-Catch-Block mit Scanner für Eingabe eines int Wertes für die private Variable apNr.
+            System.out.print("Bitte geben Sie die Arbeitspaket Nummer ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer.
+            this.apNr = apNr.nextInt();// Wert der privaten Variable wird mit dem Wert, welcher über den Scanner erahlten wird belegt.
+        } catch (Exception e) { // Ausnahme wird geworfen, wenn fehler im Try-Block entsteht.
             System.out.println("Eingabe ist ungültig! Bitte geben Sie eine Dezimalzahl ein!");
-            this.apNr = 0; // Standardwert setzen
+            this.apNr = 0; // Standardwert setzen.
         }
 
 
-        try (Scanner name = new Scanner(System.in)) { // Scanner für Eingabe erstellen
+        try (Scanner name = new Scanner(System.in)) { // Try-Catch-Block mit Scanner für Eingabe eines int Wertes für die private Variable name.
             System.out.println("Bitte geben Sie den Namen des Arbeitspakets ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
-            this.name = name.nextLine();
+            this.name = name.nextLine(); // private Variable name wird mit dem String Wert belegt, welcher vom Scanner vom Nutzer bezogen wird.
         } catch (Exception e) {
             System.out.println("Eingabe ist ungültig! Bitte geben Sie einen Namen in lateinischen Buchstaben ohne Sonderzeichen ein.");
             this.name = ""; // Standardwert setzen
         }
 
 
-        try (Scanner faz = new Scanner(System.in)) { // Scanner für Eingabe erstellen
+        try (Scanner faz = new Scanner(System.in)) { // Try-Catch-Block mit Scanner für Eingabe eines int Wertes für die private Variable faz (frühester anfangs Zeitpunkt).
             System.out.println("Bitte geben sie den frühesten Anfangszeitpunkt des Arbeitspakets ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
-            this.faz = faz.nextInt(); // Wert der privaten Variable setzen
+            this.faz = faz.nextInt(); // Belegen der privaten Variable mit Wert aus der Scanner Eingabe.
         } catch (Exception e) {
             System.out.println("Eingabe ist ungültig! Bitte geben Sie den frühesten Anfangszeitpunkt (faz) in ganzen Stunden an!");
             this.faz = 0;
         }
 
-        try (Scanner dauer = new Scanner(System.in)) { // Scanner für Eingabe erstellen
+        try (Scanner dauer = new Scanner(System.in)) { // Try-Catch-Block mit Scanner für Eingabe eines int Wertes für die private Variable dauer.
             System.out.println("Bitte geben Sie die Dauer des Arbeitspakets ein: "); // Konsolenausgabe mit Eingabeaufforderung an den Nutzer
-            this.dauer = dauer.nextInt(); // Wert der privaten Variable setzen
+            this.dauer = dauer.nextInt(); // Belegen der privaten int Variable dauer, mit dem aus Scanner erhaltenen Wert.
         } catch (Exception e) {
             System.out.println("Eingabe ist ungültig. Bitte geben Sie die Dauer des Arbeitspakets in ganzen Stunden an!");
             this.dauer = 0; // Standartwert setzen
         }
-
 
 
     }
