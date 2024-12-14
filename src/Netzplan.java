@@ -1,27 +1,47 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Netzplan {
 
-    private List<Arbeitspaket> arbeitspaketListe;
+    private static final UserInput userInput = new UserInput();
+//    private static final Menus menus = new Menus();
 
-    public List<Arbeitspaket> getArbeitspaketListe() {
-        return arbeitspaketListe;
+    private static List<Arbeitspaket> unsortierteListe = new ArrayList<>();
+    private static List<Arbeitspaket> sortierteListe = new ArrayList<>();
+
+
+//    public void inUnsortierteListe(Arbeitspaket arbeitspaket) {
+//        unsortierteListe.add(arbeitspaket);
+//    }
+
+    //
+    public List<Arbeitspaket> getUnsortierteListe() {
+        return unsortierteListe;
+    }
+    public void setUnsortierteListe(List<Arbeitspaket> unsortierteListe) {
+        this.unsortierteListe = unsortierteListe;
     }
 
-    public void setArbeitspaketListe(List<Arbeitspaket> arbeitspaketListe) {
-        this.arbeitspaketListe = arbeitspaketListe;
+    //
+    public List<Arbeitspaket> getSortierteListe() {
+        return sortierteListe;
+    }
+    public void setSortierteListe(List<Arbeitspaket> sortierteListe) {
+        this.sortierteListe = sortierteListe;
     }
 
-    public void add(Arbeitspaket arbeitspaket) {
-        arbeitspaketListe.add(arbeitspaket);
-    }
+    //
+    public static void neuesApAnlegen() {
+        String name;
+        int apNummer;
+        int FAZ;
+        int dauer;
 
-    public void remove(Arbeitspaket arbeitspaket) {
-        arbeitspaketListe.remove(arbeitspaket);
-    }
-
-    public void printList(List<Arbeitspaket> arbeitspaketListe) {
-        System.out.println(arbeitspaketListe);
-
+        name = userInput.userApNameIn();
+        apNummer = userInput.userApNummerIn();
+        FAZ = userInput.userFazIn();
+        dauer = userInput.userDauerIn();
+        Arbeitspaket arbeitspaket = new Arbeitspaket(name, apNummer, FAZ, dauer);
+        unsortierteListe.add(arbeitspaket);
     }
 }
