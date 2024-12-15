@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Arbeitspaket {
+
     private int apNr;
     private String name;
     private int dauer;
@@ -11,8 +12,7 @@ public class Arbeitspaket {
     private int sez;
     private int fp;
     private int gp;
-    private List<Arbeitspaket> vorgaengerListe;
-    private List<Arbeitspaket> nachfolgerListe;
+
 
     // Klassen eigener Konstruktor welcher die bereits bekannten Werte des Arbeitspaketes, die über Scanner dem Nutzer abgefragt werden, direkt in das zu instanziierende Objekt füllt.
     public Arbeitspaket() {
@@ -54,6 +54,7 @@ public class Arbeitspaket {
         }
 
 
+
     }
 
 
@@ -93,9 +94,8 @@ public class Arbeitspaket {
         return fez;
     }
 
-    public void setFez(int fez) {
-        this.fez = fez;
-    }
+    //Set FeZ mit Formel zur berechnung der Variablen. Wird beim Aufrufen des Setters angewandt.
+    public void setFez(int dauer) { this.fez = faz + dauer; }
 
     public int getSaz() {
         return saz;
@@ -129,30 +129,16 @@ public class Arbeitspaket {
         this.gp = gp;
     }
 
-    public List<Arbeitspaket> getVorgaengerListe() {
-        return vorgaengerListe;
-    }
 
-    public void setVorgaengerListe(List<Arbeitspaket> vorgaengerListe) {
-        this.vorgaengerListe = vorgaengerListe;
-    }
 
-    public List<Arbeitspaket> getNachfolgerListe() {
-        return nachfolgerListe;
-    }
-
-    public void setNachfolgerListe(List<Arbeitspaket> nachfolgerListe) {
-        this.nachfolgerListe = nachfolgerListe;
-    }
-
-    // Methode um den Freien Puffer anhand der Parameter zu berechnen.
+    // Methode um den freien Puffer anhand der Parameter zu berechnen.
     public int calculateFP(int faz, int fez) {
-        return this.fp = faz - fez;
+        return this.fp = faz - fez; //Formel aus Briefing zur Berechnung von freien Puffer.
     }
 
     // Methode um den gesamten Puffer anhand der Parameter zu berechnen.
     public int calculateGP(int saz, int faz) {
-        return this.gp = saz - faz;
+        return this.gp = saz - faz;  //Formel aus Briefing zur Berechnung von gesamten Puffer.
     }
 }
 
