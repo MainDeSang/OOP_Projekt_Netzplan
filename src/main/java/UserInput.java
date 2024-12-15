@@ -27,6 +27,11 @@ public class UserInput {
         return readInt("Bitte geben Sie die Nummer des Arbeitpakets an. ");
     }
 
+    // Methode für die Nutzereingabe des Nachfolgers  !!! Bisher nur einer möglich !!!
+    public int userVorgaengerIn() {
+        return readInt("Bitte geben Sie die Nummer des dieses Arbeitpaketes");
+    }
+
     // Methode für die Nutzereingabe des frühsten Anfangsstartpunkt.
     public int userFazIn() {
         return readInt("Bitte geben Sie die Nummer des Arbeitpakets an. ");
@@ -41,6 +46,7 @@ public class UserInput {
     public int readInt(String prompt) {
         Scanner scan = new Scanner(System.in);
         System.out.println(prompt);
+
         while (!scan.hasNextInt()) {
             System.out.println("Bitte geben sie nur Zahlen an. ");
             scan.next();
@@ -52,13 +58,34 @@ public class UserInput {
     public String readString(String prompt) {
         Scanner scan = new Scanner(System.in);
         System.out.println(prompt);
-        return scan.nextLine();
+        String input = scan.nextLine();
+
+        if(input.isEmpty()) {
+            return readString("Bitte mindestens ein Zeichen angeben. ");
+        }
+        return input;
     }
 
     // Methode zum aufangen einer falschen Eingabe -char-
     public String readChar(String prompt) {
         Scanner scan = new Scanner(System.in);
         System.out.println(prompt);
+        String auswahl = scan.next();
+        switch (auswahl) {
+            case "y":
+
+                break;
+            case "Y":
+
+                break;
+            case "x":
+
+                break;
+            case "X":
+
+                break;
+            default:
+        }
 
         return scan.nextLine();
     }

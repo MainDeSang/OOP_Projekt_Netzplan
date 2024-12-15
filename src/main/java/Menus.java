@@ -1,6 +1,12 @@
+import java.awt.*;
+
 public class Menus {
 
+    private final Netzplan netzplan;
 
+    public Menus(Netzplan netzplan) {
+        this.netzplan = netzplan;
+    }
 
     public void startMenuAuswahl() {
         System.out.println(" 1 - Einen neuen Netzplan erstellen. ");
@@ -29,7 +35,7 @@ public class Menus {
         int auswahl = 0;
         switch (auswahl) {
             case 1:
-                Netzplan.neuesApAnlegen();
+                netzplan.neuesApAnlegen();
                 break;
             case 2:
 

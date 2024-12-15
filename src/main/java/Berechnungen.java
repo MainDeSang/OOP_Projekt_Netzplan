@@ -13,6 +13,6 @@ public class Berechnungen {
 
     // Methode zur Berechnung des SAZ.
     public int sazRueckrechnung(int SEZ, int dauer) {
-        return SEZ -dauer;
+        return SEZ - dauer;
     }
 }
