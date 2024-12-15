@@ -1,12 +1,12 @@
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Menus {
+    public static final int NEUES_PACKET = 1;
+    public static final int BERECHNEN = 5;
 
-    private final Netzplan netzplan;
-
-    public Menus(Netzplan netzplan) {
-        this.netzplan = netzplan;
-    }
+    UserInput userInput = new UserInput();
 
     public void startMenuAuswahl() {
         System.out.println(" 1 - Einen neuen Netzplan erstellen. ");
@@ -27,26 +27,24 @@ public class Menus {
         }
     }
 
-    public void arbeitspaketMenuAuswahl() {
-        System.out.println(" 1 - Eine neues Arbeitspaket erstellen. ");
+    public int arbeitspaketMenuAuswahl() {
+        System.out.println(" " + Menus.NEUES_PACKET + " - Eine neues Arbeitspaket erstellen. ");
         System.out.println(" 2 - Ein vorhandes Arbeitspaket bearbeiten. ");
         System.out.println(" 3 - Ein vorhandes Arbeitspaket anzeigen. ");
         System.out.println(" 4 - Ein vorhandes Arbeitpaket entfernen. ");
-        int auswahl = 0;
-        switch (auswahl) {
-            case 1:
-                netzplan.neuesApAnlegen();
-                break;
-            case 2:
+        System.out.println(" " + Menus.BERECHNEN + " - Netzplan berechnen");
 
-                break;
-            case 3:
+        return userInput.readInt("Bitte Nummer eingeben");
+    }
 
-                break;
-            case 4 :
+    public ApVorlaeufer arbeitspaketErstellen() {
+        String name = userInput.userApNameIn();
+        int apNummer = userInput.userApNummerIn();
+        int dauer = userInput.userDauerIn();
+        int vorgaenger = userInput.userVorgaengerIn();
+        List<Integer> vorgaengers = new ArrayList<>();
+        vorgaengers.add(vorgaenger);
 
-                break;
-            default:
-        }
+        return new ApVorlaeufer(name,apNummer, dauer, vorgaengers);
     }
 }

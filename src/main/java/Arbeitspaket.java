@@ -10,13 +10,10 @@ public class Arbeitspaket {
     private int apNummer;
     private int FAZ;
     private int dauer;
-    // private int FEZ;
-    // private int SAZ;
     private int SEZ;
     // THIS MIGHT BE USELESS
     private int FP;
     private List<Integer> vorgaenger = new ArrayList<>();
-
 
     // private int GP;
     public Arbeitspaket(String apName, int apNummer, int FAZ, int dauer) {
@@ -24,6 +21,14 @@ public class Arbeitspaket {
         this.apNummer = apNummer;
         this.FAZ = FAZ;
         this.dauer= dauer;
+    }
+
+    public Arbeitspaket(String apName, int apNummer, int FAZ, int dauer, List<Integer> vorgaenger) {
+        this.apName = apName;
+        this.apNummer = apNummer;
+        this.FAZ = FAZ;
+        this.dauer = dauer;
+        this.vorgaenger = vorgaenger;
     }
 
     // Getter und Setter für den -Namen- des Arbeitspaketes
@@ -63,35 +68,29 @@ public class Arbeitspaket {
     public int getFEZ() {
         return FAZ + dauer;
     }
-    /* public void setFEZ(int FEZ) {
-        this.FEZ = FEZ;
-    }*/
+
     // Getter und Setter für den -spätesten Anfangzeitpunkt- des Arbeitspaketes
-
     public int getSAZ() {
-        return SEZ - dauer;
+        return SEZ + dauer;
     }
-    /*public void setSAZ(int SAZ) {
-        this.SAZ = SAZ;
-    }*/
-    // Getter und Setter für den -spätesten Endzeitpunkt- des Arbeitspaketes
 
+    // Getter und Setter für den -spätesten Endzeitpunkt- des Arbeitspaketes
     public int getSEZ() {
         return SEZ;
     }
     public void setSEZ(int SEZ) {
         this.SEZ = SEZ;
     }
-    // Getter und Setter für den -freien Puffer- des Arbeitspaketes
 
+    // Getter und Setter für den -freien Puffer- des Arbeitspaketes
     public int getFP() {
         return FP;
     }
     public void setFP(int FP) {
         this.FP = FP;
     }
-    // Getter und Setter für den -gesamten Puffer- des Arbeitspaketes
 
+    // Getter und Setter für den -gesamten Puffer- des Arbeitspaketes
     public int getGP() {
         return getSAZ() - FAZ;
     }
