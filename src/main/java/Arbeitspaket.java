@@ -4,8 +4,6 @@ import java.util.stream.Collectors;
 
 public class Arbeitspaket {
 
-    private static final Berechnungen calc = new Berechnungen();
-
     private String apName;
     private int apNummer;
     private int FAZ;
@@ -31,40 +29,40 @@ public class Arbeitspaket {
         this.vorgaenger = vorgaenger;
     }
 
-    // Getter und Setter für den -Namen- des Arbeitspaketes
 
+    // Getter und Setter für den -Namen- des Arbeitspaketes
     public String getApName() {
         return apName;
     }
     public void setApName(String apName) {
         this.apName = apName;
     }
-    // Getter und Setter für die -Nummer- des Arbeitspaketes
 
+    // Getter und Setter für die -Nummer- des Arbeitspaketes
     public int getApNummer() {
         return apNummer;
     }
     public void setApNummer(int apNummer) {
         this.apNummer = apNummer;
     }
-    // Getter und Setter für den -frühesten Anfangszeitpunkt- des Arbeitspaketes
 
+    // Getter und Setter für den -frühesten Anfangszeitpunkt- des Arbeitspaketes
     public int getFAZ() {
         return FAZ;
     }
     public void setFAZ(int FAZ) {
         this.FAZ = FAZ;
     }
-    // Getter und Setter für die -Dauer- des Arbeitspaketes
 
+    // Getter und Setter für die -Dauer- des Arbeitspaketes
     public int getDauer() {
         return dauer;
     }
     public void setDauer(int dauer) {
         this.dauer = dauer;
     }
-    // Getter und Setter für den -frühesten Endzeitpunkt- des Arbeitspaketes
 
+    // Getter und Setter für den -frühesten Endzeitpunkt- des Arbeitspaketes
     public int getFEZ() {
         return FAZ + dauer;
     }
@@ -99,8 +97,7 @@ public class Arbeitspaket {
     public List<Integer> getVorgaenger() {
         return vorgaenger;
     }
-
-    // Einen neuen Vrgänger hinzufügen
+    // Einen neuen Vorgänger hinzufügen
     public void addVorgaenger(int newVorgaenger) {
         vorgaenger.add(newVorgaenger);
     }
@@ -117,4 +114,6 @@ public class Arbeitspaket {
                 ", vorgaenger=" + vorgaenger.stream().map(Object::toString).collect(Collectors.joining(" ")) +
                 '}';
     }
+
+
 }

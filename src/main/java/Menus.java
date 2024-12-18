@@ -1,21 +1,25 @@
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Menus {
-    public static final int NEUES_PACKET = 1;
-    public static final int BERECHNEN = 5;
 
+
+public class Menus {
+    //public static final int NEUES_PACKET = 1;
+    //public static final int BERECHNEN = 5;
+    //public static final int ANZEIGEN = 2;
     UserInput userInput = new UserInput();
 
-    public void startMenuAuswahl() {
-        System.out.println(" 1 - Einen neuen Netzplan erstellen. ");
-        System.out.println(" 2 - Ein vorhanden Netzplan bearbeiten. ");
-        System.out.println(" 3 - Ein vorhanden Netzplan entfernen. ");
-        int auswahl = 0;
-        switch (auswahl) {
-            case 1:
 
+    public int startMenuAuswahl() {
+        System.out.println(" 1 - ( noch gleich AP erstellung )Einen neuen Netzplan erstellen. ");
+        System.out.println(" 2 - Einen vorhanden Netzplan anzeigen. ");
+        System.out.println(" 3 - Ein vorhanden Netzplan bearbeiten. ");
+        System.out.println(" 4 - Ein vorhanden Netzplan entfernen. ");
+        System.out.println(" 5 - Beenden");
+
+        /*switch (userInput.menuAuswahl()) {
+            case 1:
+                //netzPlan.start();
                 break;
             case 2:
 
@@ -23,21 +27,87 @@ public class Menus {
             case 3:
 
                 break;
-            default:
-        }
+            case 4:
+
+                break;
+            case 5:
+                System.out.println("Auf Wiedersehen. Wixxa");
+                //netzPlan.setRunning(false);
+                break;
+            default:  userInput.readInt("Bitte wählen Sie die Nummer des Menupunktes.");
+
+        } */
+        return userInput.menuAuswahl();
+    }
+
+    public int netzplanBearbeitenMenu() {
+        System.out.println(" 1 - Den Namen des Netzplans ändern. ");
+        System.out.println(" 2 - Die Arbeitspakete des Netzplans bearbeiten. ");
+        System.out.println(" 3 - zurück zum Haupt menu");
+
+        /* int auswahl = 0;
+        switch (auswahl) {
+            case 1:
+                System.out.println("WURDE NOCH NICHT PROGRAMMIERT");
+                break;
+            case 2:
+                arbeitspaketMenuAuswahl();
+                break;
+            case 3:
+                startMenuAuswahl();
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+            case 6:
+
+                break;
+            default: userInput.menuAuswahl();
+        } */
+        return userInput.menuAuswahl();
     }
 
     public int arbeitspaketMenuAuswahl() {
-        System.out.println(" " + Menus.NEUES_PACKET + " - Eine neues Arbeitspaket erstellen. ");
+        System.out.println(" 1 - Eine neues Arbeitspaket erstellen. ");
         System.out.println(" 2 - Ein vorhandes Arbeitspaket bearbeiten. ");
         System.out.println(" 3 - Ein vorhandes Arbeitspaket anzeigen. ");
         System.out.println(" 4 - Ein vorhandes Arbeitpaket entfernen. ");
-        System.out.println(" " + Menus.BERECHNEN + " - Netzplan berechnen");
+        System.out.println(" 5 - Netzplan berechnen");
+        System.out.println(" 6 - Zurück zum Hauptmenu");
 
-        return userInput.readInt("Bitte Nummer eingeben");
+        /* int auswahl = 0;
+        switch (auswahl) {
+            case 1:
+
+                break;
+            case 2:
+                System.out.println("WURDE NOCHT NICHT PROGRAMMIERT");
+                break;
+            case 3:
+                System.out.println("WURDE NOCHT NICHT PROGRAMMIERT");
+                break;
+            case 4:
+                System.out.println("WURDE NOCHT NICHT PROGRAMMIERT");
+                break;
+            case 5:
+                //netzPlan1.berechnen(Netzplan.getDieCooleNeueUnsortierteListe());
+                System.out.println("WURDE NOCHT NICHT PROGRAMMIERT");
+                break;
+            case 6:
+                startMenuAuswahl();
+                break;
+            default: userInput.menuAuswahl();
+        } */
+        return userInput.menuAuswahl();
     }
 
-    public ApVorlaeufer arbeitspaketErstellen() {
+
+    // Methode erstellt AP mit Daten der Usereingabe und
+    // Methode in die Klasse Netzplan verschoben.
+    /* public ApVorlaeufer arbeitspaketErstellen() {
         String name = userInput.userApNameIn();
         int apNummer = userInput.userApNummerIn();
         int dauer = userInput.userDauerIn();
@@ -46,5 +116,5 @@ public class Menus {
         vorgaengers.add(vorgaenger);
 
         return new ApVorlaeufer(name,apNummer, dauer, vorgaengers);
-    }
+    } */
 }

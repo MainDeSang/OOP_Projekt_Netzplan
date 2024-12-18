@@ -11,14 +11,17 @@ public class UserInput {
         return auswahl;
     }
 
-    public void jaNeinAbfrage() {
+    public String jaNeinAbfrage(String prompt) {
         Scanner scan = new Scanner(System.in);
+        System.out.println(prompt);
         String antwort = " ";
         antwort = readChar("Bitte geben sie ein Y oder N ein.");
+        return antwort;
     }
 
     // Methode für die Nutzereingabe des Ap Namen.
     public String userApNameIn() {
+
         return readString("Bitte geben Sie einen Namen für das Arbeitspaket an. ");
     }
 
@@ -29,17 +32,17 @@ public class UserInput {
 
     // Methode für die Nutzereingabe des Nachfolgers  !!! Bisher nur einer möglich !!!
     public int userVorgaengerIn() {
-        return readInt("Bitte geben Sie die Nummer des dieses Arbeitpaketes");
+        return readInt("Bitte geben Sie die Vorgänger des AP an.");
     }
 
     // Methode für die Nutzereingabe des frühsten Anfangsstartpunkt.
-    public int userFazIn() {
-        return readInt("Bitte geben Sie die Nummer des Arbeitpakets an. ");
-    }
+    //public int userFazIn() {
+    //    return readInt("Bitte geben Sie die Nummer des Arbeitpakets an. ");
+    //}
 
     // Methode für die Nutzereingabe der Dauer des Arbeitspaketes.
     public int userDauerIn() {
-        return readInt("Bitte geben Sie die Nummer des Arbeitpakets an. ");
+        return readInt("Bitte geben Sie die Dauer des Arbeitpakets an. ");
     }
 
     // Methode zum aufangen einer falschen Eingabe wenn kein -int-
@@ -85,9 +88,11 @@ public class UserInput {
 
                 break;
             default:
+                System.out.println("Bitte geben sie ein Y für Ja oder N für Nein ein.");
         }
 
         return scan.nextLine();
     }
+
 
 }
